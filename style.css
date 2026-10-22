@@ -1,0 +1,649 @@
+*{
+    box-sizing: border-box;
+   
+}
+
+:root{
+    --left-top: #161515;
+    --left-bottom: #161515;
+    --top-bar: #222222;
+    --links: #ffffff70;
+}
+
+body{
+    margin: 0 ;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    gap: 10px;
+}
+
+#side-bar{
+    height: 95vh;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    
+}
+
+ .nav-btn{
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 5px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  
+ }
+
+
+
+ .left-top{
+    background-color: var(--left-top);
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    border-radius: 12px;
+    padding: 15px; 
+    
+  
+
+ }
+
+
+ .nav-btn img{
+    filter: invert(1);
+ }
+
+
+ .nav-links{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  
+
+}
+
+/* Left Bottom Section */
+
+.left-bottom{
+    height: 80vh;
+    width: 25vw;
+    background-color:var(--left-bottom) ;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    border-radius: 12px;
+   
+}
+
+.library{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 15px;
+}
+.left-bottom .library svg{
+    height: 25px;
+    filter: invert(1);
+    
+}
+
+.left-bottom .library span{
+    font-weight: 600;
+}
+
+.library-links{
+    display: flex;
+    justify-content: start;
+    gap:5px;
+    padding: 10px;
+    font-size: 10px;
+    flex-wrap: wrap;
+
+    /* background-color: antiquewhite; */
+}
+
+.library-links a {
+
+    color: var(--links);
+    text-decoration: none;
+
+}
+.library-links a:hover{
+
+    text-decoration: underline;
+
+}
+
+/* Main Section */
+
+
+#main{
+    height: 95vh;
+    width: 72vw;
+    background-color: var(--left-bottom);
+    border-radius:10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.hamburger-toggle{
+    display: none;
+}
+
+#main .top-bar .signs{
+    display: flex;
+    gap: 10px;
+}
+
+#main .top-bar .signs img{
+
+    filter: invert(0.9);
+    
+    
+}
+
+#main .top-bar{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    width: 72vw;
+    border-radius: 10px 10px 0px 0px;
+    background-color: var(--top-bar);
+    padding: 0 20px;
+}
+
+.spotify-logo{
+    display: none;
+}
+
+#main .top-bar .auth-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#main .top-bar .auth-btn .sign-up{
+    background: none;
+    border: none;
+    color: rgba(240, 238, 234, 0.877);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#main .top-bar .auth-btn .login{
+    background-color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+#main .container{
+    /* background-color: rgb(34, 31, 28); */
+    height: calc(95vh - 20vh);  /* = 75vh */
+    color: white;
+    font-family: sans-serif;
+    margin: 0px 15px;
+
+}
+
+#main .container .playlists{
+    /* background-color: rgb(243, 179, 100); */
+    /* border: 2px solid wheat; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-y: scroll;
+    scrollbar-width:thin;
+    scrollbar-color: rgb(71, 66, 66) var(--left-bottom);
+    gap: 15px;
+    padding: 5px 25px;
+    height: 60vh;
+    width: 70vw;
+    margin: auto;
+
+    
+}
+
+
+
+#main .container .playlists .playlist-box img{
+    height: 150px;
+    width: 160px;
+    border-radius: 8px;
+    align-self: center;
+}
+
+#main .container .playlists .playlist-box{
+    height: 250px;
+    width: 190px;
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
+    padding-top: 15px;
+    gap: 15px;
+    border-radius: 8px;
+    background-color: var(--top-bar);
+
+}
+
+
+#main .container .playlists .playlist-box .playlist-box-text{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    gap: 8px;
+}
+#main .container .playlists .playlist-box .playlist-box-text div{
+    font-weight: 600;
+    font-size: 20px;
+}
+#main .container .playlists .playlist-box .playlist-box-text span{
+    font-size: 15px;
+    color: var(--links);
+}
+
+#main .player{
+    height: 13vh;
+    width: 72vw;
+    align-self: center;
+    border-radius:0px 0px 12px 12px ;
+    background: linear-gradient(to bottom, #3d383863, rgb(48, 32, 42));
+    color: var(--links);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#main .player .player-1{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    /* background-color: #726666; */
+    justify-content: space-between;
+    margin:  0 15px;
+    padding-top: 10px;
+    
+}
+
+#main .player .player-1 .play-action{
+    display: flex;
+    align-items: end;
+    gap: 10px;
+
+
+}
+#main .player .player-1 .playtime-volume{
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+}
+
+
+#main .player .player-1 .play-time{
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
+#main .player .player-1 .playtime-volume .play-volume{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#main .player .player-1 .playtime-volume .play-volume input{
+    height: 2px;
+    width: 100px;
+    
+    accent-color: yellow;
+}
+
+#main .player .player-2{
+    height: 20px;
+    width: 70vw;
+    margin: auto;
+    display: flex;
+    padding-bottom: 9px;
+    
+}
+
+#main .player .player-2 input{
+
+    width: 70vw;
+    background: white;
+    cursor: pointer;
+    height: 2px;
+    accent-color: white;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 583px){
+
+
+    /* Hamburger Menu */
+
+    .hamburger-user{
+        display: flex;
+        filter: invert(1);
+    }
+
+    .hamburger-toggle{
+    display: block;
+}
+
+    .nav-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-main h1 {
+    color: white;
+    font-size: 24px;
+}
+
+/* Hamburger Button */
+.menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 8px;
+
+    border: 1px solid white;
+    border-radius: 50%;
+
+   
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+/* Glass Sliding Menu */
+.ham-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    max-width: 100%;
+    height: 100vh;
+    padding: 100px 25px 30px;
+
+    background: linear-gradient(to bottom, rgba(32, 31, 31, 0.808), rgba(42, 49, 49, 0.75) );
+   
+    transform: translateX(110%);
+    transition: all 0.45s ease;
+    z-index: 5;
+}
+
+
+.ham-nav-links .sign-up-mobo{
+    background-color: transparent;
+    border: none;
+    color: white;
+    border: 1px solid white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 8px;
+    padding: 10px 35px;
+    transition: all 0.2s ease-in-out;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    top: 2vh;
+    left: 2vw;
+    align-self: center;
+
+
+}
+
+
+.ham-nav-links .sign-up-mobo:hover{
+    transform: scaleX(100%);
+    background-color: white;
+    color: black;
+    
+}
+
+
+.ham-nav-links.open {
+    transform: translateX(0);
+
+}
+
+/* Navigation Links */
+
+.ham-nav-links a {
+    display: block;
+    /* padding: 14px 16px; */
+    color: white;
+
+    transition: all 0.3s ease;
+}
+
+.ham-nav-links a:hover {
+    cursor: pointer;
+    transform: translateX(-5px);
+   
+}
+
+
+/* ------------------------------------------------------------ */
+
+    #side-bar{
+
+        display: none;
+
+    }
+ .left-top{
+    display: none;
+
+ }
+
+    .left-bottom{
+    display: none;
+    }
+
+
+    #main{
+        height: 100vh;
+    width: 100vw;
+    background-color: var(--left-bottom);
+}
+
+
+#main .top-bar{
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    width:100vw;
+    border-radius: 0;
+    background-color: var(--top-bar);
+
+    
+}
+
+#main .top-bar .signs a:nth-child(1), #main .top-bar a:nth-child(2){
+
+    display: none;
+    
+}
+
+.auth-btn a:nth-child(1), .auth-btn a:nth-child(2){
+
+    display: none;
+    
+}
+
+.spotify-logo{
+    display: block;
+    filter: invert(1);
+}
+
+
+
+.user-svg{
+    display: block;
+    border: 1px solid white;
+    padding: 3px 5px; 
+    border-radius: 50%;
+}
+
+#main .container{
+    height: 75vh;
+    color: white;
+    font-family: sans-serif;
+    width: 95vw;
+    margin: auto;
+    
+
+
+}
+
+#main .container .playlists{
+    width: 95vw;
+    margin: auto;
+}
+
+#main .player{
+    height: 12vh;
+    width: 100vw;
+    border-radius:0 ;
+    background: linear-gradient(to bottom, #3d383863, rgb(48, 32, 42));
+    color: var(--links);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#main .player .player-1{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    left: 5px;
+
+}
+#main .player .player-2{
+    width: 95vw;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8px;
+    
+}
+
+#main .player .player-2 input{
+    width: 95vw;
+    background: white;
+    cursor: pointer;
+    flex-shrink: 3;
+    height: 2px;
+    accent-color: white;
+}
+
+   
+}
+
+
+@media (max-width: 421px){
+
+
+
+
+    #main .container .playlists{
+    width: 95vw;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+    #main .player .player-1 {
+        position: relative;
+        left: 10px;
+    }
+
+#main .player .player-1 .playtime-volume .play-volume input{
+    height: 2px;
+    width: calc(100px - 30%);
+    
+    accent-color: yellow;
+}
+
+
+#main .player .player-1 .play-title{
+    font-size: 12px;
+}
+#main .player .player-1 .play-action{
+    display: flex;
+    align-items: end;
+    gap: 10px;
+
+
+}
+#main .player .player-1 .playtime-volume{
+
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+#main .player .player-1{
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+   justify-content: center;
+    
+    padding-top: 10px;
+}
+
+
+
+#main .player .player-1 .play-time{
+    font-size: 10px;
+    position: relative;
+    left: 25px;
+}
+#main .player .player-1 .playtime-volume .play-volume{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+}
+
+
+
