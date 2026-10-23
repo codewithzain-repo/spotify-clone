@@ -112,8 +112,8 @@ While building this project, I practised:
 **Muhammad Zain**  
 Web Developer | AI Enthusiast | Digital Marketer
 
-- **Live Project:** [Spotify Clone](https://spotify-clone-ruby-two-48.vercel.app/)
-- **GitHub:** [Add your GitHub profile link](https://github.com/)
+- **Live Project:** https://spotify-clone-ruby-two-48.vercel.app
+- **GitHub:** https://github.com/codewithzain-repo
 
 ---
 
