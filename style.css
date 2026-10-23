@@ -1136,3 +1136,63 @@ body{
         min-width: 0;
     }
 }
+
+
+/* Keep song title and play buttons in fixed positions */
+
+#main .player .player-1 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+#main .player .player-1 .play-title {
+    grid-column: 1;
+    min-width: 0;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#main .player .player-1 .play-action {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+#main .player .player-1 .playtime-volume {
+    grid-column: 3;
+    justify-self: end;
+    min-width: 0;
+}
+
+/* Mobile player: keep the existing three-column grid */
+@media (max-width: 768px) {
+    #main .player .player-1 {
+        display: contents;
+    }
+
+    #main .player .player-1 .play-title {
+        grid-column: 2;
+        grid-row: 1;
+        min-width: 0;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    #main .player .player-1 .play-action {
+        grid-column: 2;
+        grid-row: 2;
+        min-width: 0;
+        flex-shrink: 0;
+    }
+}
