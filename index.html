@@ -6,8 +6,8 @@
     <title>Spotify - Web Player: Listen to Music, Podcasts, and Audiobooks Online</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
-    <link rel="preload" href="https://encore.scdn.co/fonts/SpotifyMixUI-Regular-76c92fb1a35c462f73429fa8865163eb.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="https://encore.scdn.co/fonts/SpotifyMixMono-Regular-134eeb986fc0f94a9f0acb9cedaeb584.woff2" as="font" type="font/woff2" crossorigin="anonymous"><link rel="preload" href="https://encore.scdn.co/fonts/SpotifyMixUITitleVariable-08bab3354d40f74e5177917b5ae80894.woff2" as="font" type="font/woff2" crossorigin="anonymous"><link rel="preload" href="https://encore.scdn.co/fonts/SpotifyMixUI-Bold-09c45a3a0ce9d2971e62cb26e97760fb.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <!-- <link rel="preload" href="https://encore.scdn.co/fonts/SpotifyMixUI-Regular-76c92fb1a35c462f73429fa8865163eb.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://encore.scdn.co/fonts/SpotifyMixMono-Regular-134eeb986fc0f94a9f0acb9cedaeb584.woff2" as="font" type="font/woff2" crossorigin="anonymous"><link rel="preload" href="https://encore.scdn.co/fonts/SpotifyMixUITitleVariable-08bab3354d40f74e5177917b5ae80894.woff2" as="font" type="font/woff2" crossorigin="anonymous"><link rel="preload" href="https://encore.scdn.co/fonts/SpotifyMixUI-Bold-09c45a3a0ce9d2971e62cb26e97760fb.woff2" as="font" type="font/woff2" crossorigin="anonymous"> -->
 </head>
 
 <body style="background-color: black;">
@@ -57,10 +57,7 @@
 
         <div class="songs-list">
 
-            <ul>
-
-                <li></li>
-                
+            <ul>                
 
             </ul>
             
@@ -252,9 +249,9 @@
                 <div class="play-title">Sunset Breeze.mp3</div>
                 
                 <div class="play-action">
-                    <img src="assets/player svg/backward-step-svgrepo-com.svg" alt="backward" height="25" style="filter: invert(0.8);">
-                    <img src="assets/player svg/play-svgrepo-com.svg" alt="play-btn" style="filter: invert(0.8);" height="25">
-                    <img src="assets/player svg/backward-step-svgrepo-com.svg" alt="forward" height="25" style="filter: invert(0.8); transform: scaleX(-1);">
+                    <img class="previous-btn" src="assets/player svg/backward-step-svgrepo-com.svg" alt="backward" height="25" style="filter: invert(0.8); cursor: pointer;">
+                    <img class="play-btn" src="assets/player svg/play-svgrepo-com.svg" alt="play-btn" style="filter: invert(0.8); cursor: pointer;" height="25" >
+                    <img class="next-btn" src="assets/player svg/backward-step-svgrepo-com.svg" alt="forward" height="25" style="filter: invert(0.8); transform: scaleX(-1); cursor: pointer;">
                 </div>
                 
                 <div class="playtime-volume">
