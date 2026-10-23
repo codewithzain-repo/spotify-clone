@@ -18,29 +18,24 @@ if (menuBtn && navLinks) {
    2. GET SONGS FROM SERVER
 ================================================== */
 
+
 async function getSongs() {
-    const response = await fetch(
-        "assets/song_list/"
-    );
+    const response = await fetch("songs.json");
 
-    const html = await response.text();
-
-    const div = document.createElement("div");
-    div.innerHTML = html;
-
-    const links = div.getElementsByTagName("a");
-    const songs = [];
-
-    for (let index = 0; index < links.length; index++) {
-        const element = links[index];
-
-        if (/\.mp3$/i.test(element.href.split("?")[0])) {
-            songs.push(element.href);
-        }
+    if (!response.ok) {
+        throw new Error("songs.json load nahi hui");
     }
+
+    const data = await response.json();
+
+    const songs = data.songs.map(function (filename) {
+        return "assets/song_list/" +
+            encodeURIComponent(filename);
+    });
 
     return songs;
 }
+
 
 
 /* ==================================================
