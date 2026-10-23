@@ -647,3 +647,163 @@ body{
 
 
 
+
+/* Responsive music player layout: volume | title + controls | time + seek bar */
+@media (max-width: 768px) {
+    #main .player {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: minmax(75px, 0.85fr) minmax(110px, 1.35fr) minmax(85px, 0.9fr);
+        grid-template-rows: auto auto;
+        align-items: center;
+        align-content: center;
+        column-gap: 10px;
+        row-gap: 6px;
+        height: auto;
+        min-height: 78px;
+        padding: 10px 12px;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    #main .player .player-1,
+    #main .player .player-2,
+    #main .player .player-1 .playtime-volume {
+        display: contents;
+    }
+
+    #main .player .player-1 .play-title {
+        grid-column: 2;
+        grid-row: 1;
+        min-width: 0;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+        font-size: 12px;
+        padding: 0;
+    }
+
+    #main .player .player-1 .play-action {
+        grid-column: 2;
+        grid-row: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        min-width: 0;
+    }
+
+    #main .player .player-1 .play-action img {
+        height: 21px;
+        width: 21px;
+        object-fit: contain;
+    }
+
+    #main .player .player-1 .playtime-volume .play-volume {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        min-width: 0;
+        width: 100%;
+    }
+
+    #main .player .player-1 .playtime-volume .play-volume img {
+        flex: 0 0 auto;
+        height: 17px;
+        width: 17px;
+    }
+
+    #main .player .player-1 .playtime-volume .play-volume input {
+        min-width: 0;
+        width: 100%;
+        max-width: 65px;
+        height: 3px;
+        margin: 0;
+        accent-color: #ffd700;
+        align-self: center;
+    }
+
+    #main .player .player-1 .play-time {
+        grid-column: 3;
+        grid-row: 1;
+        min-width: 0;
+        text-align: center;
+        justify-content: center;
+        font-size: 10px;
+        white-space: nowrap;
+        position: static;
+        left: auto;
+        align-self: end;
+        margin-bottom: 0;
+    }
+
+    #main .player .player-2 .play-range {
+        grid-column: 3;
+        grid-row: 2;
+        width: 100%;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        align-self: start;
+        margin-top: 0;
+    }
+
+    #main .player .player-2 .play-range input {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        height: 3px;
+        margin: 0;
+        accent-color: #ffffff;
+        align-self: center;
+    }
+}
+
+@media (max-width: 380px) {
+    #main .player {
+        grid-template-columns: minmax(65px, 0.8fr) minmax(95px, 1.2fr) minmax(75px, 0.85fr);
+        column-gap: 6px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    #main .player .player-1 .playtime-volume .play-volume input {
+        max-width: 45px;
+    }
+
+    #main .player .player-1 .play-action {
+        gap: 10px;
+    }
+}
+
+/* Final mobile player alignment and slider colors */
+@media (max-width: 768px) {
+    #main .player {
+        align-content: center;
+        align-items: center;
+        row-gap: 8px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    #main .player .player-1 .playtime-volume .play-volume input {
+        accent-color: yellow;
+    }
+
+    #main .player .player-2 .play-range input {
+        accent-color: white;
+    }
+}
+
+@media (max-width: 380px) {
+    #main .player {
+        row-gap: 8px;
+    }
+}
