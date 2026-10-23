@@ -129,6 +129,36 @@ body{
 
 }
 
+.songs-list{
+
+    overflow-y: auto;
+    height: 50vh;
+    /* width: 50vw; */
+   
+    
+}
+
+.songs-list ul {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 22vw;
+    margin: auto;
+    row-gap: 10px;
+}
+
+.songs-list ul li{
+    list-style-type: decimal;
+    border: 1px solid rgba(255, 255, 255, 0.486);
+    list-style-position: inside;
+    height: 40px;
+    width: 15vw;
+    text-align: center;
+    margin: auto;
+}
+
+
+
 /* Main Section */
 
 
@@ -882,5 +912,227 @@ body{
         box-sizing: border-box;
         z-index: 20;
         row-gap: 6px;
+    }
+}
+
+
+/* Your Library song list: centered cards, numbered rows, independent vertical scrolling */
+.left-bottom {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.left-bottom .library {
+    flex: 0 0 auto;
+    align-self: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.left-bottom .songs-list {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0 4px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(71, 66, 66) var(--left-bottom);
+}
+
+.left-bottom .songs-list ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0 8px 12px;
+    row-gap: 8px;
+    list-style: none;
+}
+
+.left-bottom .songs-list ul li {
+    display: list-item;
+    list-style-type: decimal;
+    list-style-position: inside;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 260px;
+    min-height: 36px;
+    height: auto;
+    margin: 0;
+    padding: 9px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    border-radius: 5px;
+    text-align: left;
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Match the playlist scrollbar in Chromium-based browsers */
+.left-bottom .songs-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.left-bottom .songs-list::-webkit-scrollbar-track {
+    background: var(--left-bottom);
+}
+
+.left-bottom .songs-list::-webkit-scrollbar-thumb {
+    background-color: rgb(71, 66, 66);
+    border-radius: 8px;
+}
+
+.left-bottom .library-links {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+/* Keep the centered library rows usable at narrower sidebar widths */
+@media (max-width: 900px) {
+    .left-bottom .songs-list ul {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .left-bottom .songs-list ul li {
+        padding: 9px 8px;
+    }
+}
+
+/* Tablet / short-landscape fix (584px–768px): keep sidebar beside the main player */
+@media (min-width: 584px) and (max-width: 768px) {
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    body {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 8px;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    #side-bar {
+        display: flex;
+        flex: 0 0 clamp(145px, 25vw, 190px);
+        width: clamp(145px, 25vw, 190px);
+        height: calc(100dvh - 16px);
+        min-height: 0;
+        gap: 8px;
+        overflow: hidden;
+    }
+
+    .left-top {
+        flex: 0 0 auto;
+        width: 100%;
+        padding: 10px;
+        gap: 12px;
+    }
+
+    .left-bottom {
+        flex: 1 1 auto;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    #main {
+        display: flex;
+        flex: 1 1 0;
+        flex-direction: column;
+        width: auto;
+        min-width: 0;
+        height: calc(100dvh - 16px);
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    #main .top-bar {
+        flex: 0 0 52px;
+        width: 100%;
+        min-width: 0;
+        height: 52px;
+    }
+
+    #main .top-bar .signs {
+        width: auto;
+        min-width: 0;
+    }
+
+    #main .container {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        min-width: 0;
+        min-height: 0;
+        margin: 0;
+        padding: 8px 10px 6px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    #main .container > div:first-child {
+        flex: 0 0 auto;
+    }
+
+    #main .container .playlists {
+        flex: 1 1 auto;
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        height: auto;
+        max-height: none;
+        margin: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        box-sizing: border-box;
+    }
+
+    #main .player {
+        flex: 0 0 auto;
+        position: relative;
+        inset: auto;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        min-height: 78px;
+        height: auto;
+        margin: 0;
+        padding: 6px 8px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    #main .player .player-1,
+    #main .player .player-2 {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    #main .player .player-2 input {
+        width: 100%;
+        min-width: 0;
     }
 }
