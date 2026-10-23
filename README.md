@@ -55,25 +55,6 @@ Try the deployed project here:
 
 **[Open Spotify Clone](https://spotify-clone-ruby-two-48.vercel.app/)**
 
-## 📂 Project Structure
-
-```text
-spotify-clone/
-├── index.html
-├── style.css
-├── script.js
-├── songs.json
-└── assets/
-    ├── song_list/
-    │   ├── song-one.mp3
-    │   └── song-two.mp3
-    └── player svg/
-        ├── play-svgrepo-com.svg
-        └── pause.svg
-```
-
-*The names shown above are examples. Your actual filenames and folders may differ.*
-
 ## ⚙️ Run Locally
 
 1. Clone or download this repository.
