@@ -779,7 +779,7 @@ body{
     }
 
     #main .player .player-1 .play-action {
-        gap: 10px;
+        gap: 8px;
     }
 }
 
@@ -788,7 +788,7 @@ body{
     #main .player {
         align-content: center;
         align-items: center;
-        row-gap: 8px;
+        row-gap: 3px;
         padding-top: 8px;
         padding-bottom: 8px;
     }
@@ -804,6 +804,83 @@ body{
 
 @media (max-width: 380px) {
     #main .player {
-        row-gap: 8px;
+        row-gap: 6px;
+    }
+}
+
+/* Mobile viewport fix: keep the page itself from scrolling; only playlists scroll */
+@media (max-width: 768px) {
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    body {
+        display: block;
+    }
+
+    #main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    #main .top-bar {
+        flex: 0 0 10vh;
+        min-height: 52px;
+        box-sizing: border-box;
+    }
+
+    #main .container {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin: 0;
+        padding: 8px 10px 6px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    #main .container > div:first-child {
+        flex: 0 0 auto;
+    }
+
+    #main .container .playlists {
+        flex: 1 1 auto;
+        min-height: 0;
+        height: auto;
+        max-height: none;
+        width: 100%;
+        margin: 0 auto;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        box-sizing: border-box;
+    }
+
+    #main .player {
+        flex: 0 0 auto;
+        position: relative;
+        inset: auto;
+        width: 100%;
+        max-width: 100%;
+        min-height: 78px;
+        height: auto;
+        margin: 0;
+        box-sizing: border-box;
+        z-index: 20;
+        row-gap: 6px;
     }
 }
